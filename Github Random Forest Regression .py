@@ -39,7 +39,7 @@ dtr = DecisionTreeRegressor()
 dtr.fit(x_train,y_train)
 
 print(dtr.score(x_test,y_test))
-""" seed 98456: R2 = 0.6381277368399642"""
+""" seed 98456: R2 = 0.****"""
 
 #training
 y_pred_train = dtr.predict(x_train)
@@ -56,8 +56,8 @@ print("mse is:",mse_dtr)
 print("rmse is:",rmse_dtr) 
 
 """ seed 98456
-mse is: 74.00214240982734
-rmse is: 8.602449791183169"""
+mse is: **.*****
+rmse is: *.********"""
 
 
 ##random forest regressor
@@ -88,8 +88,8 @@ rfr.fit(x_test, y_test)
 
 
 print(rfr.score(x_test, y_test))
-"""R2 score = 0.9488646058585449"""
-"""seed 96456: R2 score = 0.9616600624134064"""
+"""R2 score = 0.*******"""
+"""seed 96456: R2 score = 0.**********"""
 
 
 #train
@@ -105,8 +105,8 @@ rmse_rfr = mse_rfr**0.5
 print("mse is:",mse_rfr)
 print("rmse is:",rmse_rfr) 
 """ seed 98456
-mse is: 7.840439321021517
-rmse is: 2.800078449083439"""
+mse is: *.******
+rmse is: *.******"""
 
 ###
 
@@ -125,7 +125,7 @@ df_pred.reset_index(level=0, inplace=True)
 
 combined_withcovid = df_test.merge(df_pred, left_on='id', right_on='index')
 
-combined_withcovid = combined_withcovid.to_csv("/Users/davidigbokwe/Documents/David's Files/MISM 6212/combined_withcovid", sep=',')
+combined_withcovid = combined_withcovid.to_csv("Testcsv.csv", sep=',')
 
 
 
@@ -156,7 +156,7 @@ plt.show()
 import pandas as pd
 
 
-df = pd.read_csv("/Users/davidigbokwe/Documents/David's Files/MISM 6214/Final_data_Americas.csv")
+df = pd.read_csv("Testcsv.csv")
 
 
 #convert time to integer
@@ -182,7 +182,7 @@ dtr = DecisionTreeRegressor()
 dtr.fit(x_train,y_train)
 
 print(dtr.score(x_test,y_test))
-""" seed 98456: score = 0.716629521748277"""
+""" seed 98456: score = *.*******"""
 
 #training
 y_pred_train = dtr.predict(x_train)
@@ -196,14 +196,15 @@ mse_dtr = mse(y_test,y_pred_test)
 rmse_dtr = mse_dtr**0.5
 print("mse is:",mse_dtr)
 print("rmse is:",rmse_dtr) 
-"""mse is: 60.716392947819436
-rmse is: 7.792072442413471"""
+"""
+mse is: **.*****
+rmse is: *.********"""
 
 ##random forest regressor
 # Import the model we are using
 from sklearn.ensemble import RandomForestRegressor
 
-# Instantiate model with 1000 decision trees
+# Instantiate model with 500 decision trees
 rfr = RandomForestRegressor(n_estimators = 500, random_state = 98456)
 
 #implement grid search
@@ -231,7 +232,7 @@ rfr.fit(x_test, y_test)
 
 #test
 print(rfr.score(x_test, y_test))
-"""seed 984546: score = 0.9661955840164529"""
+"""score = *.*******"""
 
 #training
 y_pred_train = rfr.predict(x_train)
@@ -245,9 +246,9 @@ mse_rfr = mse(y_train,y_pred_train)
 rmse_rfr = mse_rfr**0.5
 print("mse is:",mse_rfr)
 print("rmse is:",rmse_rfr) 
-"""seed 98456: 
-mse is: 148.43457782429616
-rmse is: 12.183373006860462"""
+""" seed 98456
+mse is: **.*****
+rmse is: *.********"""
 
 
 #test data
@@ -256,9 +257,9 @@ mse_rfr = mse(y_test,y_pred_test)
 rmse_rfr = mse_rfr**0.5
 print("mse is:",mse_rfr)
 print("rmse is:",rmse_rfr) 
-"""seed 98456: 
-mse is: 7.243105269439318
-rmse is: 2.69130177970426"""
+"""
+mse is: *.*****
+rmse is: *.********"""
 
 
 ###
@@ -301,7 +302,7 @@ plt.show()
 
 combined_without = df_test.merge(df_pred, left_on='id', right_on='index')
 
-combined_without = combined_without.to_csv("/Users/davidigbokwe/Documents/David's Files/MISM 6212/combined_without",sep=',')
+combined_without = combined_without.to_csv("Testcsv.csv",sep=',')
 
 
 
