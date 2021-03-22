@@ -9,7 +9,7 @@ Created on Tue Mar 16 19:17:14 2021
 import pandas as pd
 
 
-df = pd.read_csv() #NDA
+df = pd.read_csv("Testcsv.csv") 
 
 df.info()
 
